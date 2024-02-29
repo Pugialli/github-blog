@@ -33,6 +33,7 @@ interface GitContextType {
   myProfile: Profile;
   posts: PostInfo[];
   fetchPost: (id: string) => Promise<PostInfo>;
+  fetchPosts: (query?: string) => void;
 }
 
 export const GitContext = createContext({} as GitContextType);
@@ -51,14 +52,19 @@ export function GitProvider({ children }: GitProviderProps) {
   }, []);
 
   const fetchPosts = useCallback(async (query?: string) => {
+    const username = "Pugialli";
+    const repo = "github-blog";
+
     if (!query) {
       query = "";
+    } else {
+      query = query.replace(" ", "%20");
+      query = query + "%20";
     }
-    const response = await api.get("/search/issues", {
-      params: {
-        q: `${query}repo:Pugialli/github-blog`,
-      },
-    });
+
+    const response = await api.get(
+      `/search/issues?q=${query}%20repo:${username}/${repo}`
+    );
 
     setPosts(response.data.items);
   }, []);
@@ -87,7 +93,7 @@ export function GitProvider({ children }: GitProviderProps) {
   }, [fetchProfile, fetchPosts]);
 
   return (
-    <GitContext.Provider value={{ myProfile, posts, fetchPost }}>
+    <GitContext.Provider value={{ myProfile, posts, fetchPost, fetchPosts }}>
       {children}
     </GitContext.Provider>
   );

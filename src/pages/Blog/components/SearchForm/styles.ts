@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SearchBarContainer = styled.div`
+export const SearchFormContainer = styled.form`
   width: 54rem;
   padding-top: 0.75rem;
   padding-bottom: 3rem;

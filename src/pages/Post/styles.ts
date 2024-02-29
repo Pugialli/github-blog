@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Markdown from "react-markdown";
 
 export const PostContainer = styled.main`
   display: flex;
@@ -8,22 +9,11 @@ export const PostContainer = styled.main`
   margin-bottom: 14rem;
   width: 54rem;
 `;
-export const PostContent = styled.p`
+export const PostContent = styled(Markdown)`
   padding: 0 2rem;
   margin-bottom: 1.5rem;
 
   color: ${(props) => props.theme.text};
   line-height: 160%;
   font-size: 0.875rem;
-`;
-
-export const CodeInsert = styled.div`
-  width: 51rem;
-  p {
-    padding: 1rem 1rem;
-    background: ${(props) => props.theme.post};
-    color: ${(props) => props.theme.text};
-    line-height: 160%;
-    font-size: 1rem;
-  }
 `;

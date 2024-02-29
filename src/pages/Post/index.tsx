@@ -28,13 +28,8 @@ export function Post() {
   return (
     <PostContainer>
       <MainPostCard post={post} />
-      <PostContent>{post ? post.body : ""} </PostContent>
-      {/* <CodeInsert>
-        <p>
-          let foo = 42; //foo is now a number foo = ‘bar’; // foo is now a
-          string foo = true; // foo is now a boolean
-        </p>
-      </CodeInsert> */}
+
+      <PostContent children={post.body} />
     </PostContainer>
   );
 }
