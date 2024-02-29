@@ -10,8 +10,6 @@ export const BlogContainer = styled.main`
 export const BlogHead = styled.div`
   display: flex;
   justify-content: space-between;
-  /* padding: 0 18rem; */
-  padding-top: 4.5rem;
   width: 54rem;
 
   h1 {

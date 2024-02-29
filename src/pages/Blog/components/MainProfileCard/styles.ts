@@ -1,6 +1,7 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-export const MainCardContainer = styled.div`
+export const MainProfileCardContainer = styled.div`
   position: relative;
   width: 54rem;
   height: 13.25rem;
@@ -11,6 +12,7 @@ export const MainCardContainer = styled.div`
   padding: 2rem 2.5rem;
   gap: 2rem;
   margin-top: -6.625rem;
+  margin-bottom: 4.5rem;
 
   filter: drop-shadow(#000 0px 2px 5px);
 `;
@@ -21,15 +23,16 @@ export const AvatarPicture = styled.img`
   border-radius: 8px;
 `;
 
-export const MainCardTop = styled.div`
+export const MainProfileCardTop = styled.div`
   display: flex;
   justify-content: space-between;
 `;
 
-export const MainCardContent = styled.div`
+export const MainProfileCardContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  width: 100%;
 
   h1 {
     color: ${(props) => props.theme.title};
@@ -39,6 +42,7 @@ export const MainCardContent = styled.div`
   }
 
   p {
+    height: 3.25rem;
     color: ${(props) => props.theme.text};
     line-height: 160%;
     font-size: 1rem;
@@ -46,7 +50,7 @@ export const MainCardContent = styled.div`
   }
 `;
 
-export const MainCardInfo = styled.div`
+export const MainProfileCardInfo = styled.div`
   display: flex;
   gap: 1.5rem;
 
@@ -56,7 +60,7 @@ export const MainCardInfo = styled.div`
   }
 `;
 
-export const GithubLink = styled.div`
+export const GithubLink = styled(NavLink)`
   display: flex;
   align-items: center;
   gap: 0.5rem;

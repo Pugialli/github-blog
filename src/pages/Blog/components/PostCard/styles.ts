@@ -1,11 +1,15 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
-export const PostCardContainer = styled.div`
+export const PostCardContainer = styled(NavLink)`
+  text-decoration: none;
+
   height: 16.25rem;
   width: 26rem;
   background-color: ${(props) => props.theme.post};
   border-radius: 10px;
   padding: 2rem;
+  cursor: pointer;
 
   div {
     display: flex;
@@ -15,7 +19,7 @@ export const PostCardContainer = styled.div`
   }
 
   h1 {
-    width: 80%;
+    width: 60%;
     color: ${(props) => props.theme.title};
     font-weight: bold;
     line-height: 160%;
